@@ -196,7 +196,7 @@
   <ItemGroup>
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\Site.css" />
-    <Content Include="Assets\images\bootstrap-solid.svg" />
+    <Content Include="Assets\images\v-card.svg" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\jquery-3.4.1.js" />
     <Content Include="Assets\js\jquery-3.4.1.min.js" />
