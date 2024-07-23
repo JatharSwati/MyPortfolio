@@ -21,5 +21,7 @@ namespace MyPortfolio.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<BasicInfo> BasicInfo { get; set; }
     }
 }
