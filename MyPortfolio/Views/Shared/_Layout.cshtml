@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - My Portfolio</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -20,9 +20,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                @*<li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("Index", "Home", new { area = "" })">Home <span class="sr-only">(current)</span></a>
-                </li>*@
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "CreatePortfolio", new { area = "" })">Create Portfolio<span class="sr-only">(current)</span></a>
+                </li>
                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                 {
                     <li class="nav-item dropdown">
@@ -43,11 +43,7 @@
     </nav>
 
     <div class="container-fluid">
-        <div class="row">
-            <div style="margin:1em">
-                @RenderBody()
-            </div>
-        </div>
+        @RenderBody()
     </div>
 
     <footer>
