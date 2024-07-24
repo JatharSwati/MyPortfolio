@@ -189,11 +189,20 @@
     <Compile Include="Migrations\202407230538525_CreateBasicInfoTable.designer.cs">
       <DependentUpon>202407230538525_CreateBasicInfoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407240622598_AddPortfolioUserTable.cs" />
+    <Compile Include="Migrations\202407240622598_AddPortfolioUserTable.designer.cs">
+      <DependentUpon>202407240622598_AddPortfolioUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407240843205_RenamePortfolioUserCreatedOnColumnName.cs" />
+    <Compile Include="Migrations\202407240843205_RenamePortfolioUserCreatedOnColumnName.designer.cs">
+      <DependentUpon>202407240843205_RenamePortfolioUserCreatedOnColumnName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\BasicInfo.cs" />
+    <Compile Include="Models\PortfolioUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -361,6 +370,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407230538525_CreateBasicInfoTable.resx">
       <DependentUpon>202407230538525_CreateBasicInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240622598_AddPortfolioUserTable.resx">
+      <DependentUpon>202407240622598_AddPortfolioUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240843205_RenamePortfolioUserCreatedOnColumnName.resx">
+      <DependentUpon>202407240843205_RenamePortfolioUserCreatedOnColumnName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
