@@ -197,6 +197,10 @@
     <Compile Include="Migrations\202407240843205_RenamePortfolioUserCreatedOnColumnName.designer.cs">
       <DependentUpon>202407240843205_RenamePortfolioUserCreatedOnColumnName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407241130009_RemovePluralizingTableNameConvention.cs" />
+    <Compile Include="Migrations\202407241130009_RemovePluralizingTableNameConvention.designer.cs">
+      <DependentUpon>202407241130009_RemovePluralizingTableNameConvention.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -376,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407240843205_RenamePortfolioUserCreatedOnColumnName.resx">
       <DependentUpon>202407240843205_RenamePortfolioUserCreatedOnColumnName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407241130009_RemovePluralizingTableNameConvention.resx">
+      <DependentUpon>202407241130009_RemovePluralizingTableNameConvention.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

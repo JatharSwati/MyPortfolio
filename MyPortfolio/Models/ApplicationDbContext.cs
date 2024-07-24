@@ -1,4 +1,5 @@
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MyPortfolio.Models
@@ -20,6 +21,14 @@ namespace MyPortfolio.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Remove default pluralization
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
 
