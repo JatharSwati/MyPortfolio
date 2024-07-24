@@ -64,6 +64,22 @@ namespace MyPortfolio.ViewModels
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {1} characters long.")]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {1} characters long.")]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {1} characters long.")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

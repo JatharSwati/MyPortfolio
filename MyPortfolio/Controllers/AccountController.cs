@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System;
 
 namespace MyPortfolio.Controllers
 {
@@ -149,6 +150,21 @@ namespace MyPortfolio.Controllers
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     ViewBag.Link = callbackUrl;
+
+                    PortfolioUser portfolioUser = new PortfolioUser();
+                    portfolioUser.PortfolioUserId = Guid.NewGuid();
+                    portfolioUser.UserId = new Guid(user.Id);
+                    portfolioUser.UserName = model.UserName;
+                    portfolioUser.FirstName = model.FirstName;
+                    portfolioUser.LastName = model.LastName;
+                    portfolioUser.CreatedOn = DateTime.Now;
+
+                    ApplicationDbContext db = new ApplicationDbContext();
+
+                    db.PortfolioUser.Add(portfolioUser);
+                    db.SaveChanges();
+
+
                     return View("DisplayEmail");
                 }
                 AddErrors(result);
