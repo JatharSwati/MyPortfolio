@@ -151,18 +151,19 @@ namespace MyPortfolio.Controllers
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     ViewBag.Link = callbackUrl;
 
-                    PortfolioUser portfolioUser = new PortfolioUser();
-                    portfolioUser.PortfolioUserId = Guid.NewGuid();
-                    portfolioUser.UserId = new Guid(user.Id);
-                    portfolioUser.UserName = model.UserName;
-                    portfolioUser.FirstName = model.FirstName;
-                    portfolioUser.LastName = model.LastName;
-                    portfolioUser.CreatedOn = DateTime.Now;
+                    using (ApplicationDbContext db = new ApplicationDbContext())
+                    {
+                        PortfolioUser portfolioUser = new PortfolioUser();
+                        portfolioUser.PortfolioUserId = Guid.NewGuid();
+                        portfolioUser.UserId = new Guid(user.Id);
+                        portfolioUser.UserName = model.UserName;
+                        portfolioUser.FirstName = model.FirstName;
+                        portfolioUser.LastName = model.LastName;
+                        portfolioUser.CreatedOn = DateTime.Now;
 
-                    ApplicationDbContext db = new ApplicationDbContext();
-
-                    db.PortfolioUser.Add(portfolioUser);
-                    db.SaveChanges();
+                        db.PortfolioUser.Add(portfolioUser);
+                        db.SaveChanges();
+                    }
 
 
                     return View("DisplayEmail");
