@@ -21,11 +21,15 @@ namespace MyPortfolio.Controllers
 
             model.Init(db, Helpers.GetPortfolioUserId(User));
 
-            return View();
+            return View(model);
         }
 
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                db.Dispose();
+            }
             base.Dispose(disposing);
         }
     }
