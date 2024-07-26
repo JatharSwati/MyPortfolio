@@ -1,4 +1,4 @@
-﻿
+﻿@model MyPortfolio.ViewModels.CreatePortfolioViewModel
 @{
     ViewBag.Title = "Create Portfolio";
 }
@@ -24,51 +24,27 @@
             <tr>
                 <td class="text-left">Basic Details</td>
                 <td>
-                    <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
-                    <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    @if (Model.BasicInfoId == Guid.Empty)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>    
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }                                       
                 </td>
                 <td>
-                    <button class="btn btn-primary" style="color:white;">Add</button>
-                    <button class="btn btn-warning" style="color:white;">Edit</button>
+                    @if (Model.BasicInfoId == Guid.Empty)
+                    {
+                        @Html.ActionLink("Add", "SaveBasicInfo", "MyBasicInfo", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "SaveBasicInfo", "MyBasicInfo", new { id = Model.BasicInfoId }, new { @class = "btn btn-warning" })
+                    }
                 </td>
             </tr>
-
-            <tr>
-                <td class="text-left">Education</td>
-                <td>
-                    <span class="badge bg-danger" style="font-size: 0.75em; padding: 0.5em; color: white;">Incompleted</span>
-                    <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
-                </td>
-                <td>
-                    <button class="btn btn-primary" style="color:white;">Add</button>
-                    <button class="btn btn-warning" style="color:white;">Edit</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="text-left">Experience</td>
-                <td>
-                    <span class="badge bg-danger" style="font-size: 0.75em; padding: 0.5em; color: white;">Incompleted</span>
-                    <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
-                </td>
-                <td>
-                    <button class="btn btn-primary" style="color:white;">Add</button>
-                    <button class="btn btn-warning" style="color:white;">Edit</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="text-left">Languages</td>
-                <td>
-                    <span class="badge bg-danger" style="font-size: 0.75em; padding: 0.5em; color: white;">Incompleted</span>
-                    <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
-                </td>
-                <td>
-                    <button class="btn btn-primary" style="color:white;">Add</button>
-                    <button class="btn btn-warning" style="color:white;">Edit</button>
-                </td>
-            </tr>
-
+            
         </tbody>
 
     </table>
