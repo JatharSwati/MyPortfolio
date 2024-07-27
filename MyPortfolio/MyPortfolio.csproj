@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202407241130009_RemovePluralizingTableNameConvention.designer.cs">
       <DependentUpon>202407241130009_RemovePluralizingTableNameConvention.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..cs" />
+    <Compile Include="Migrations\202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..designer.cs">
+      <DependentUpon>202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -387,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407241130009_RemovePluralizingTableNameConvention.resx">
       <DependentUpon>202407241130009_RemovePluralizingTableNameConvention.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..resx">
+      <DependentUpon>202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -21,7 +21,9 @@ namespace MyPortfolio.Models
 
         public string Email { get; set; }
 
-        public DateTime Birthdate { get; set; }
+        public DateTime? Birthdate { get; set; }
+
+        public string Profile { get; set; }
 
     }
 }
