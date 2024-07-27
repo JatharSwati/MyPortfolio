@@ -207,6 +207,10 @@
     <Compile Include="Migrations\202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..designer.cs">
       <DependentUpon>202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407270216196_AddDataAnnotationsToBasicInfotable..cs" />
+    <Compile Include="Migrations\202407270216196_AddDataAnnotationsToBasicInfotable..designer.cs">
+      <DependentUpon>202407270216196_AddDataAnnotationsToBasicInfotable..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -394,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..resx">
       <DependentUpon>202407270139176_AddProfileColumnAndMakeBirthdateNullabaleInBasicInfoTable..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407270216196_AddDataAnnotationsToBasicInfotable..resx">
+      <DependentUpon>202407270216196_AddDataAnnotationsToBasicInfotable..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
