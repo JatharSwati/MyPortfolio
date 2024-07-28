@@ -211,11 +211,16 @@
     <Compile Include="Migrations\202407270216196_AddDataAnnotationsToBasicInfotable..designer.cs">
       <DependentUpon>202407270216196_AddDataAnnotationsToBasicInfotable..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407281332024_AddEducationTable.cs" />
+    <Compile Include="Migrations\202407281332024_AddEducationTable.designer.cs">
+      <DependentUpon>202407281332024_AddEducationTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\BasicInfo.cs" />
+    <Compile Include="Models\Education.cs" />
     <Compile Include="Models\PortfolioUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -401,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407270216196_AddDataAnnotationsToBasicInfotable..resx">
       <DependentUpon>202407270216196_AddDataAnnotationsToBasicInfotable..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407281332024_AddEducationTable.resx">
+      <DependentUpon>202407281332024_AddEducationTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
