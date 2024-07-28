@@ -180,6 +180,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyBasicInfoController.cs" />
+    <Compile Include="Controllers\MyEducationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -370,6 +371,7 @@
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\CreatePortfolio\Index.cshtml" />
     <Content Include="Views\MyBasicInfo\SaveBasicInfo.cshtml" />
+    <Content Include="Views\MyEducation\SaveEducation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

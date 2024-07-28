@@ -1,0 +1,69 @@
+﻿@model MyPortfolio.Models.Education
+@{
+    ViewBag.Title = "Save Education";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Education</h2>
+    </div>
+
+    @using (Html.BeginForm("SaveEducation", "MyEducation", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(m => m.EducationId)
+        @Html.HiddenFor(m => m.PortfolioUserId)
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.EducationName, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.EducationName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.EducationName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.CollegeName, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.CollegeName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CollegeName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.PercentageOrCGPA, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.PercentageOrCGPA, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PercentageOrCGPA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.StartYear, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.StartYear, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(m => m.StartYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.PassingYear, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.PassingYear, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(m => m.PassingYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-9 offset-md-3">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    }
+
+</div>
+

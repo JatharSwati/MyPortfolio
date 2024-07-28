@@ -26,12 +26,12 @@
                 <td>
                     @if (Model.BasicInfoId == Guid.Empty)
                     {
-                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>    
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
                     }
                     else
                     {
                         <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
-                    }                                       
+                    }
                 </td>
                 <td>
                     @if (Model.BasicInfoId == Guid.Empty)
@@ -44,7 +44,31 @@
                     }
                 </td>
             </tr>
-            
+
+            <tr>
+                <td class="text-left">Education</td>
+                <td>
+                    @if (Model.EducationId == Guid.Empty)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.EducationId == Guid.Empty)
+                    {
+                        @Html.ActionLink("Add", "SaveEducation", "MyEducation", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "SaveEducation", "MyEducation", new { educationId = Model.EducationId }, new { @class = "btn btn-warning" })
+                    }
+                </td>
+            </tr>
+
         </tbody>
 
     </table>
