@@ -48,7 +48,7 @@
             <tr>
                 <td class="text-left">Education</td>
                 <td>
-                    @if (Model.EducationId == Guid.Empty)
+                    @if (Model.EducationCount == 0)
                     {
                         <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
                     }
@@ -58,13 +58,13 @@
                     }
                 </td>
                 <td>
-                    @if (Model.EducationId == Guid.Empty)
+                    @if (Model.EducationCount == 0)
                     {
-                        @Html.ActionLink("Add", "SaveEducation", "MyEducation", null, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Add", "Index", "MyEducation", null, new { @class = "btn btn-primary" })
                     }
                     else
                     {
-                        @Html.ActionLink("Edit", "SaveEducation", "MyEducation", new { educationId = Model.EducationId }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Edit", "Index", "MyEducation", null, new { @class = "btn btn-success" })
                     }
                 </td>
             </tr>

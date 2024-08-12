@@ -372,6 +372,7 @@
     <Content Include="Views\CreatePortfolio\Index.cshtml" />
     <Content Include="Views\MyBasicInfo\SaveBasicInfo.cshtml" />
     <Content Include="Views\MyEducation\SaveEducation.cshtml" />
+    <Content Include="Views\MyEducation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

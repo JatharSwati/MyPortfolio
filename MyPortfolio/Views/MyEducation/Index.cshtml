@@ -1,0 +1,76 @@
+﻿@model List<MyPortfolio.Models.Education>
+
+@{
+    ViewBag.Title = "Education List";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Education List</h2>
+    </div>
+
+    @if (Model.Count() > 0)
+    {
+        <div class="row">
+            
+            @foreach (var education in Model)
+            {
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    
+                    <div class="card shadow-sm w-100">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h5 class="card-title">@education.EducationName</h5>
+
+                            <h6 class="card-subtitle mb-2 text-muted">@education.CollegeName</h6>
+
+                            <p class="card-text">
+
+                                @if (education.PercentageOrCGPA.HasValue)
+                                {
+                                    <strong>Percentage/CGPA:</strong> @education.PercentageOrCGPA.Value.ToString("F2")<br />
+                                }
+
+                                <strong>Start Year:</strong> @education.StartYear<br />
+
+                                @if (education.PassingYear.HasValue)
+                                {
+                                    <strong>Passing Year:</strong> @education.PassingYear.Value
+                                }
+
+                            </p>
+
+                            <div class="mt-auto d-flex justify-content-between">
+                                @Html.ActionLink("Edit", "SaveEducation", "MyEducation", new { educationId = education.EducationId }, new { @class = "btn btn-success btn-sm" })
+                                @Html.ActionLink("Delete", "DeleteEducation", "MyEducation", new { educationId = education.EducationId}, new { @class = "btn btn-danger btn-sm" })
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            No education records found. Add your education by clicking the "Add New Education" button.
+        </div>
+    }
+
+    <div class="text-center">
+        @Html.ActionLink("Add New Education", "SaveEducation", "MyEducation", null, new { @class = "btn btn-primary"})
+    </div>
+
+    <div class="text-center mt-3">
+        @Html.ActionLink("Back", "Index", "CreatePortfolio", null, new { @class = "btn btn-secondary" })
+    </div>
+
+</div>
+
+ 
