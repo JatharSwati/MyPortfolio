@@ -12,11 +12,15 @@ namespace MyPortfolio.ViewModels
 
         public int EducationCount { get; set; }
 
+        public int ExperienceCount { get; set; }
+
         public void Init(ApplicationDbContext db, Guid portfolioUserId)
         {
             this.BasicInfoId = db.BasicInfo.Where(m => m.PortfolioUserId == portfolioUserId).Select(m => m.BasicInfoId).FirstOrDefault();
 
             this.EducationCount = db.Education.Where(m => m.PortfolioUserId == portfolioUserId).Count();
+
+            this.ExperienceCount = db.Experience.Where(m => m.PortfolioUserId == portfolioUserId).Count();
         }
     }
 }
