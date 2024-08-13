@@ -39,5 +39,7 @@ namespace MyPortfolio.Models
         public DbSet<Education> Education { get; set; }
 
         public DbSet<Experience> Experience { get; set; }
+
+        public DbSet<Courses> Courses { get; set; }
     }
 }

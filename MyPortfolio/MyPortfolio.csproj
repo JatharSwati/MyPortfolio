@@ -221,11 +221,16 @@
     <Compile Include="Migrations\202408130813434_AddExperienceTable.designer.cs">
       <DependentUpon>202408130813434_AddExperienceTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408131438508_AddCoursesTable.cs" />
+    <Compile Include="Migrations\202408131438508_AddCoursesTable.designer.cs">
+      <DependentUpon>202408131438508_AddCoursesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\BasicInfo.cs" />
+    <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\PortfolioUser.cs" />
@@ -423,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408130813434_AddExperienceTable.resx">
       <DependentUpon>202408130813434_AddExperienceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408131438508_AddCoursesTable.resx">
+      <DependentUpon>202408131438508_AddCoursesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
