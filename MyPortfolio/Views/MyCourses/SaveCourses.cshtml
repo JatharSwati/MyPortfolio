@@ -1,0 +1,85 @@
+﻿@model MyPortfolio.Models.Courses
+
+@{
+    ViewBag.Title = "Save Courses";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Course</h2>
+    </div>
+
+    @using (Html.BeginForm("SaveCourses", "MyCourses", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(m => m.CoursesId)
+        @Html.HiddenFor(m => m.PortfolioUserId)
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.CourseName, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.CourseName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CourseName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.CoursePlatfrom, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.CoursePlatfrom, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CoursePlatfrom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.StartDate, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.StartDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(m => m.StartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.EndDate, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.EndDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(m => m.EndDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Description, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Skills, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.Skills, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Skills, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-9 offset-md-3">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    }
+
+    <div class="form-group row">
+        <div class="col-md-9 offset-md-3">
+            @Html.ActionLink("Back", "Index", "MyCourses", null, new { @class = "btn btn-secondary" })
+        </div>
+    </div>
+
+</div>
+
+

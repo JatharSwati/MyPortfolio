@@ -40,7 +40,7 @@
                     }
                     else
                     {
-                        @Html.ActionLink("Edit", "SaveBasicInfo", "MyBasicInfo", new { basicInfoId = Model.BasicInfoId }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Edit", "SaveBasicInfo", "MyBasicInfo", new { basicInfoId = Model.BasicInfoId }, new { @class = "btn btn-success" })
                     }
                 </td>
             </tr>
@@ -89,6 +89,30 @@
                     else
                     {
                         @Html.ActionLink("Edit", "Index", "MyExperience", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Courses</td>
+                <td>
+                    @if (Model.CoursesCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.CoursesCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyCourses", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyCourses", null, new { @class = "btn btn-success" })
                     }
                 </td>
             </tr>

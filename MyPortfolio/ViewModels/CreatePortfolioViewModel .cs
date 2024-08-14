@@ -14,6 +14,8 @@ namespace MyPortfolio.ViewModels
 
         public int ExperienceCount { get; set; }
 
+        public int CoursesCount { get; set; }
+
         public void Init(ApplicationDbContext db, Guid portfolioUserId)
         {
             this.BasicInfoId = db.BasicInfo.Where(m => m.PortfolioUserId == portfolioUserId).Select(m => m.BasicInfoId).FirstOrDefault();
@@ -21,6 +23,8 @@ namespace MyPortfolio.ViewModels
             this.EducationCount = db.Education.Where(m => m.PortfolioUserId == portfolioUserId).Count();
 
             this.ExperienceCount = db.Experience.Where(m => m.PortfolioUserId == portfolioUserId).Count();
+
+            this.CoursesCount = db.Courses.Where(m => m.PortfolioUserId == portfolioUserId).Count();
         }
     }
 }
