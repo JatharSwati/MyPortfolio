@@ -185,6 +185,7 @@
     <Compile Include="Controllers\MyExperienceController.cs" />
     <Compile Include="Controllers\MyLanguageController.cs" />
     <Compile Include="Controllers\MySkillController.cs" />
+    <Compile Include="Controllers\MyStrengthController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -410,6 +411,8 @@
     <Content Include="Views\MySkill\Index.cshtml" />
     <Content Include="Views\MyLanguage\Index.cshtml" />
     <Content Include="Views\MyLanguage\SaveLanguage.cshtml" />
+    <Content Include="Views\MyStrength\SaveStrength.cshtml" />
+    <Content Include="Views\MyStrength\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

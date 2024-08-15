@@ -1,0 +1,62 @@
+﻿@model List<MyPortfolio.Models.Strength>
+
+@{
+    ViewBag.Title = "Strength List";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Strength List</h2>
+    </div>
+
+    @if (Model.Count() > 0)
+    {
+        <div class="container my-4">
+
+            <div class="row">
+
+                <div class="col-12 col-md-9 col-lg-6 mx-auto">
+
+                    <div class="card shadow-sm">
+
+                        <div class="card-body text-center">
+
+                            <div class="card-text">
+
+                                @foreach (var strength in Model)
+                                {
+                                    <a href="@Url.Action("SaveStrength", "MyStrength", new { strengthId = strength.StrengthId })" class="badge bg-success text-white fs-3 p-2 mx-2 my-2 text-decoration-none">
+                                        @strength.Name
+                                    </a>
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            No strength records found. Add your strength by clicking the "Add New Strength" button.
+        </div>
+    }
+
+    <div class="text-center">
+        @Html.ActionLink("Add New Strength", "SaveStrength", "MyStrength", null, new { @class = "btn btn-primary" })
+    </div>
+
+    <div class="text-center mt-3">
+        @Html.ActionLink("Back", "Index", "CreatePortfolio", null, new { @class = "btn btn-secondary" })
+    </div>
+
+</div>
+

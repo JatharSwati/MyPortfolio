@@ -165,8 +165,33 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="text-left">Strength</td>
+                <td>
+                    @if (Model.StrengthCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.StrengthCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyStrength", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyStrength", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
         </tbody>
 
     </table>
+
 </div>
 
