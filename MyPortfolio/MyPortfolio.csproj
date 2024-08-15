@@ -183,6 +183,7 @@
     <Compile Include="Controllers\MyCoursesController.cs" />
     <Compile Include="Controllers\MyEducationController.cs" />
     <Compile Include="Controllers\MyExperienceController.cs" />
+    <Compile Include="Controllers\MyHobbyController.cs" />
     <Compile Include="Controllers\MyLanguageController.cs" />
     <Compile Include="Controllers\MySkillController.cs" />
     <Compile Include="Controllers\MyStrengthController.cs" />
@@ -418,6 +419,8 @@
     <Content Include="Views\MyLanguage\SaveLanguage.cshtml" />
     <Content Include="Views\MyStrength\SaveStrength.cshtml" />
     <Content Include="Views\MyStrength\Index.cshtml" />
+    <Content Include="Views\MyHobby\SaveHobby.cshtml" />
+    <Content Include="Views\MyHobby\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
