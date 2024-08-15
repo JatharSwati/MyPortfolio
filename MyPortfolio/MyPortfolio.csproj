@@ -236,6 +236,10 @@
     <Compile Include="Migrations\202408141338168_AddLanguageTable.designer.cs">
       <DependentUpon>202408141338168_AddLanguageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408150704031_AddStrengthTable.cs" />
+    <Compile Include="Migrations\202408150704031_AddStrengthTable.designer.cs">
+      <DependentUpon>202408150704031_AddStrengthTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -247,6 +251,7 @@
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\PortfolioUser.cs" />
     <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\Strength.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -456,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408141338168_AddLanguageTable.resx">
       <DependentUpon>202408141338168_AddLanguageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408150704031_AddStrengthTable.resx">
+      <DependentUpon>202408150704031_AddStrengthTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -45,5 +45,7 @@ namespace MyPortfolio.Models
         public DbSet<Skill> Skill { get; set; }
 
         public DbSet<Language> Language { get; set; }
+
+        public DbSet<Strength> Strength { get; set; }
     }
 }
