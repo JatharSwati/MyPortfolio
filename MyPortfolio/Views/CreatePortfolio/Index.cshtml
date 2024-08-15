@@ -141,6 +141,30 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="text-left">Language</td>
+                <td>
+                    @if (Model.LanguageCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.LanguageCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyLanguage", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyLanguage", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
         </tbody>
 
     </table>

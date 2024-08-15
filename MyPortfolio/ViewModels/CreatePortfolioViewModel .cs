@@ -18,6 +18,8 @@ namespace MyPortfolio.ViewModels
 
         public int SkillCount { get; set; }
 
+        public int LanguageCount { get; set; }
+
         public void Init(ApplicationDbContext db, Guid portfolioUserId)
         {
             this.BasicInfoId = db.BasicInfo.Where(m => m.PortfolioUserId == portfolioUserId).Select(m => m.BasicInfoId).FirstOrDefault();
@@ -29,6 +31,8 @@ namespace MyPortfolio.ViewModels
             this.CoursesCount = db.Courses.Where(m => m.PortfolioUserId == portfolioUserId).Count();
 
             this.SkillCount = db.Skill.Where(m => m.PortfolioUserId == portfolioUserId).Count();
+
+            this.LanguageCount = db.Language.Where(m => m.PortfolioUserId == portfolioUserId).Count();
         }
     }
 }
