@@ -47,5 +47,7 @@ namespace MyPortfolio.Models
         public DbSet<Language> Language { get; set; }
 
         public DbSet<Strength> Strength { get; set; }
+
+        public DbSet<Hobby> Hobby { get; set; }
     }
 }

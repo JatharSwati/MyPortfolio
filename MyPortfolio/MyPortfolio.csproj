@@ -241,6 +241,10 @@
     <Compile Include="Migrations\202408150704031_AddStrengthTable.designer.cs">
       <DependentUpon>202408150704031_AddStrengthTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408150810495_AddHobbyTable.cs" />
+    <Compile Include="Migrations\202408150810495_AddHobbyTable.designer.cs">
+      <DependentUpon>202408150810495_AddHobbyTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -249,6 +253,7 @@
     <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Experience.cs" />
+    <Compile Include="Models\Hobby.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\PortfolioUser.cs" />
     <Compile Include="Models\Skill.cs" />
@@ -467,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408150704031_AddStrengthTable.resx">
       <DependentUpon>202408150704031_AddStrengthTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408150810495_AddHobbyTable.resx">
+      <DependentUpon>202408150810495_AddHobbyTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
