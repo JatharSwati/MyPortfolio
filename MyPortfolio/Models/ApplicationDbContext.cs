@@ -49,5 +49,7 @@ namespace MyPortfolio.Models
         public DbSet<Strength> Strength { get; set; }
 
         public DbSet<Hobby> Hobby { get; set; }
+
+        public DbSet<PortfolioLink> PortfolioLink { get; set; }
     }
 }

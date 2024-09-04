@@ -187,6 +187,7 @@
     <Compile Include="Controllers\MyLanguageController.cs" />
     <Compile Include="Controllers\MySkillController.cs" />
     <Compile Include="Controllers\MyStrengthController.cs" />
+    <Compile Include="Controllers\MyPortfolioLinkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +247,10 @@
     <Compile Include="Migrations\202408150810495_AddHobbyTable.designer.cs">
       <DependentUpon>202408150810495_AddHobbyTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408151420115_AddPortfolioLinkTable.cs" />
+    <Compile Include="Migrations\202408151420115_AddPortfolioLinkTable.designer.cs">
+      <DependentUpon>202408151420115_AddPortfolioLinkTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -256,6 +261,7 @@
     <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\Hobby.cs" />
     <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\PortfolioLink.cs" />
     <Compile Include="Models\PortfolioUser.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Strength.cs" />
@@ -421,9 +427,12 @@
     <Content Include="Views\MyStrength\Index.cshtml" />
     <Content Include="Views\MyHobby\SaveHobby.cshtml" />
     <Content Include="Views\MyHobby\Index.cshtml" />
+    <Content Include="Views\MyPortfolioLink\SavePortfolioLink.cshtml" />
+    <Content Include="Views\MyPortfolioLink\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PortfolioLink\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -478,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408150810495_AddHobbyTable.resx">
       <DependentUpon>202408150810495_AddHobbyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408151420115_AddPortfolioLinkTable.resx">
+      <DependentUpon>202408151420115_AddPortfolioLinkTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
