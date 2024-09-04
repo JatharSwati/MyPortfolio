@@ -213,6 +213,30 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="text-left">PortfolioLink</td>
+                <td>
+                    @if (Model.PortfolioLinkCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.PortfolioLinkCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyPortfolioLink", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyPortfolioLink", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
         </tbody>
 
     </table>
