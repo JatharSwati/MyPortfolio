@@ -43,7 +43,7 @@ namespace MyPortfolio.Controllers
             {
                 if (education.EducationId == Guid.Empty)
                 {
-                    // Add basic info
+                    // Add Education
 
                     education.EducationId = Guid.NewGuid();
                     education.PortfolioUserId = Helpers.GetPortfolioUserId(User);
@@ -53,7 +53,7 @@ namespace MyPortfolio.Controllers
                 }
                 else
                 {
-                    // Edit basic info
+                    // Edit Education
 
                     db.Entry(education).State = EntityState.Modified;
                     db.SaveChanges();

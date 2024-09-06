@@ -42,7 +42,7 @@ namespace MyPortfolio.Controllers
             {
                 if (experience.ExperienceId == Guid.Empty)
                 {
-                    // Add basic info
+                    // Add Experience
 
                     experience.ExperienceId = Guid.NewGuid();
                     experience.PortfolioUserId = Helpers.GetPortfolioUserId(User);
@@ -52,7 +52,7 @@ namespace MyPortfolio.Controllers
                 }
                 else
                 {
-                    // Edit basic info
+                    // Edit Experience
 
                     db.Entry(experience).State = EntityState.Modified;
                     db.SaveChanges();

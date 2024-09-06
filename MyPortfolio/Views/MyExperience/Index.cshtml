@@ -42,8 +42,8 @@
 
                                 @if (!string.IsNullOrEmpty(experience.Skills))
                                 {
-                                    <strong>Skills:</strong> @experience.Skills
-                                }
+                                    <strong>Skills:</strong> @experience.Skills <br />
+                                } 
 
                                 <span class="badge bg-secondary" style="color: white;">@experience.ExperienceType</span>
 
@@ -65,9 +65,9 @@
     }
     else
     {
-<div class="alert alert-info text-center">
-    No experience records found. Add your experience by clicking the "Add New Experience" button.
-</div>
+        <div class="alert alert-info text-center">
+            No experience records found. Add your experience by clicking the "Add New Experience" button.
+        </div>
     }
 
     <div class="text-center">
