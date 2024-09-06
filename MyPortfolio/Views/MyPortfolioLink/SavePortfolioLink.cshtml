@@ -7,7 +7,7 @@
 <div class="container mt-5">
 
     <div class="text-center mb-4">
-        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">PortfolioLink</h2>
+        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Link</h2>
     </div>
 
     @using (Html.BeginForm("SavePortfolioLink", "MyPortfolioLink", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -22,7 +22,13 @@
         <div class="form-group row">
             @Html.LabelFor(m => m.LinkType, new { @class = "col-md-3 col-form-label" })
             <div class="col-md-9">
-                @Html.TextBoxFor(m => m.LinkType, new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.LinkType,
+                    new List<SelectListItem> {
+                        new SelectListItem { Text = "Github", Value = "Github" }, 
+                        new SelectListItem { Text = "linkedin", Value = "linkedin" },
+                        new SelectListItem { Text = "Other", Value = "Other" }
+                    },
+                    new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.LinkType, "", new { @class = "text-danger" })
             </div>
         </div>

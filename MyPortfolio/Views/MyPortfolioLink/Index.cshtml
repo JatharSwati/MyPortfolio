@@ -1,13 +1,13 @@
 ﻿@model List<MyPortfolio.Models.PortfolioLink>
 
 @{
-    ViewBag.Title = "Portfolio Link List";
+    ViewBag.Title = "Link List";
 }
 
 <div class="container mt-5">
 
     <div class="text-center mb-4">
-        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Portfolio Link List</h2>
+        <h2 class="display-5 font-weight-bold text-primary border-bottom pb-3">Link List</h2>
     </div>
 
     @if (Model.Count() > 0)
@@ -27,7 +27,7 @@
                                 @foreach (var portfolioLink in Model)
                                 {
                                     <a href="@Url.Action("SavePortfolioLink", "MyPortfolioLink", new { portfolioLinkId = portfolioLink.PortfolioLinkId })" class="badge bg-success text-white fs-3 p-2 mx-2 my-2 text-decoration-none">
-                                        @portfolioLink.LinkType
+                                        @portfolioLink.Link
                                     </a>
                                 }
 
@@ -46,12 +46,12 @@
     else
     {
 <div class="alert alert-info text-center">
-            No portfolio Link records found. Add your portfolio Link by clicking the "Add New Portfolio Link" button.
+            No link records found. Add your link by clicking the "Add New Link" button.
 </div>
     }
 
     <div class="text-center">
-        @Html.ActionLink("Add New Portfolio Link", "SavePortfolioLink", "MyPortfolioLink", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Add New Link", "SavePortfolioLink", "MyPortfolioLink", null, new { @class = "btn btn-primary" })
     </div>
 
     <div class="text-center mt-3">
