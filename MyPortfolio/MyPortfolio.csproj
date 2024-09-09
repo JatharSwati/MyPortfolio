@@ -252,6 +252,10 @@
     <Compile Include="Migrations\202408151420115_AddPortfolioLinkTable.designer.cs">
       <DependentUpon>202408151420115_AddPortfolioLinkTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202409091354271_AddProfileImageTable.cs" />
+    <Compile Include="Migrations\202409091354271_AddProfileImageTable.designer.cs">
+      <DependentUpon>202409091354271_AddProfileImageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationDbInitializer.cs" />
@@ -264,6 +268,7 @@
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\PortfolioLink.cs" />
     <Compile Include="Models\PortfolioUser.cs" />
+    <Compile Include="Models\ProfileImage.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Strength.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -493,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408151420115_AddPortfolioLinkTable.resx">
       <DependentUpon>202408151420115_AddPortfolioLinkTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409091354271_AddProfileImageTable.resx">
+      <DependentUpon>202409091354271_AddProfileImageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

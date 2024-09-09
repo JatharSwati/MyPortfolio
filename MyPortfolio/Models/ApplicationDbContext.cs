@@ -51,5 +51,7 @@ namespace MyPortfolio.Models
         public DbSet<Hobby> Hobby { get; set; }
 
         public DbSet<PortfolioLink> PortfolioLink { get; set; }
+
+        public DbSet<ProfileImage> ProfileImage { get; set; }
     }
 }
