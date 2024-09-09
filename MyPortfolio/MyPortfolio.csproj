@@ -188,6 +188,7 @@
     <Compile Include="Controllers\MySkillController.cs" />
     <Compile Include="Controllers\MyStrengthController.cs" />
     <Compile Include="Controllers\MyPortfolioLinkController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -270,6 +271,7 @@
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\CreatePortfolioViewModel .cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\PortfolioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\bootstrap.min.css" />
@@ -429,6 +431,7 @@
     <Content Include="Views\MyHobby\Index.cshtml" />
     <Content Include="Views\MyPortfolioLink\SavePortfolioLink.cshtml" />
     <Content Include="Views\MyPortfolioLink\Index.cshtml" />
+    <Content Include="Views\Portfolio\GetPortfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

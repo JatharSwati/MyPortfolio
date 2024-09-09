@@ -1,0 +1,347 @@
+﻿@model MyPortfolio.ViewModels.PortfolioViewModel
+
+@{
+    ViewBag.Title = "Get Portfolio";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px; /* Space below image */
+    }
+
+    .contact-info {
+        font-size: 16px;
+    }
+
+        .contact-info .row {
+            margin: 0;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px; /* Increase space below each contact item */
+        }
+
+    .badge-skills,
+    .badge-languages,
+    .badge-strength,
+    .badge-hobbies {
+        margin-right: 10px; /* Space between badges */
+        margin-bottom: 5px; /* Space between badges in mobile view */
+    }
+
+    .badge-skills {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .badge-languages {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    .badge-strength {
+        background-color: #ffc107;
+        color: #000;
+    }
+
+    .badge-hobbies {
+        background-color: #17a2b8;
+        color: #fff;
+    }
+
+    .card-header {
+        color: #fff;
+        font-weight: bold;
+        background-color: #343a40; /* Dark background color */
+    }
+
+    .education-item,
+    .work-item,
+    .project-item,
+    .certification-item {
+        border-left: 4px solid #007bff;
+        padding-left: 15px;
+        margin-bottom: 15px;
+    }
+
+    .work-item {
+        background-color: #f8f9fa;
+    }
+
+    .project-item {
+        background-color: #e9ecef;
+    }
+
+    .certification-item {
+        background-color: #f1f3f5;
+    }
+
+    .footer-links {
+        margin-top: 20px;
+        padding: 10px 0;
+        background-color: #343a40;
+        color: #fff;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+        .footer-links a {
+            margin: 0 15px;
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+            .footer-links a:hover {
+                text-decoration: underline;
+            }
+
+</style>
+
+<div class="container mt-4">
+
+    <div class="row mb-4">
+
+        <!-- Profile Image -->
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="Swati_Jathar_Photo.PNG" alt="Profile Image" class="profile-img">
+        </div>
+
+        <!-- Name, Title, and Contact Information -->
+        <div class="col-md-6">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">@Model.BasicInfo.Name</h1>
+                <h2 class="text-secondary">@Model.BasicInfo.Designation</h2>
+            </div>
+            <div class="contact-info text-center">
+                <p><i class="fas fa-map-marker-alt"></i> @Model.BasicInfo.Address</p>
+                <p><i class="fas fa-envelope"></i> @Model.BasicInfo.Email</p>
+                <p><i class="fas fa-phone"></i> @Model.BasicInfo.PhoneNumber</p>
+                <p><i class="fas fa-birthday-cake"></i> @Model.BasicInfo.Birthdate.Value.ToString("dd MMM yyyy")</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <!-- Left Section -->
+        <div class="col-md-4">
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-graduation-cap"></i> Education</div>
+
+                <div class="card-body">
+
+                    @foreach (var education in Model.EducationList)
+                    {
+                        <div class="education-item">
+
+                            <h5>@education.EducationName</h5>
+
+                            <div class="institution">@education.CollegeName</div>
+
+                            @if (education.PercentageOrCGPA.HasValue)
+                            {
+                                <div>Percentage / CGPA: @education.PercentageOrCGPA</div>
+                            }
+
+                            @if (education.PassingYear.HasValue)
+                            {
+                                <div class="details">@education.StartYear-@education.PassingYear</div>
+                            }
+
+                            else
+                            {
+                                <div class="details">@education.StartYear</div>
+                            }
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-code"></i> Skills</div>
+
+                <div class="card-body">
+
+                    @foreach (var skill in Model.SkillList)
+                    {
+                        <span class="badge badge-skills">@skill.Name</span>
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-language"></i> Languages</div>
+
+                <div class="card-body">
+
+                    @foreach (var language in Model.LanguageList)
+                    {
+                        <span class="badge badge-languages">@language.Name</span>
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-lightbulb"></i> Strength</div>
+
+                <div class="card-body">
+
+                    @foreach (var strength in Model.StrengthList)
+                    {
+                        <span class="badge badge-strength">@strength.Name</span>
+                    }
+                 
+                </div>
+
+            </div>
+
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-puzzle-piece"></i> Hobbies</div>
+
+                <div class="card-body">
+
+                    @foreach (var hobbies in Model.HobbyList)
+                    {
+                        <span class="badge badge-hobbies">@hobbies.Name</span>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Right Section -->
+        <div class="col-md-8">
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-user"></i> Profile</div>
+
+                <div class="card-body">
+                    <p>As a Full Stack Developer, I have acquired hands-on experience in HTML, CSS, JavaScript, Bootstrap, C#, SQL, Entity Framework, and during my internship. Passionate about technology and driven by a desire for continuous learning, I am always seeking opportunities to expand my knowledge and enhance my skills.</p>
+                </div>
+
+            </div>
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-briefcase"></i> Work Experience</div>
+
+                <div class="card-body">
+
+                    @foreach (var experience in Model.ExperienceList)
+                    {
+                        <div class="work-item">
+
+                            <h5>@experience.Designation</h5>
+
+                            @if (experience.EndDate.HasValue)
+                            {
+                                <div class="role"><strong>@experience.OrganizationName | @experience.JoiningDate.Value.ToString("MMM yyyy") - @experience.EndDate.Value.ToString("MMM yyyy")</strong></div>
+                            }
+                            else
+                            {
+                                <div class="role">@experience.OrganizationName | @experience.JoiningDate.Value.ToString("MMM yyyy")</div>
+                            }
+
+                            <p>@experience.Description</p>
+
+                            @if (!string.IsNullOrEmpty(experience.Skills))
+                            {
+                                <p><strong>Skills: </strong>@experience.Skills</p>
+                            }
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <div class="card mb-4">
+
+                <div class="card-header"><i class="fas fa-certificate"></i> Course Certifications</div>
+
+                <div class="card-body">
+
+                    @foreach (var course in Model.CoursesList)
+                    {
+                        <div class="certification-item">
+
+                            <h5>@course.CourseName</h5>
+
+                            @if (course.EndDate.HasValue)
+                            {
+                                <div class="role"><strong>@course.CoursePlatfrom | @course.StartDate.Value.ToString("MMM yyyy") - @course.EndDate.Value.ToString("MMM yyyy")</strong> </div>
+                            }
+                            else
+                            {
+                                <div class="role">@course.StartDate.Value.ToString("MMM yyyy")</div>
+                            }
+
+                            <p>@course.Description</p>
+
+                            @if (!string.IsNullOrEmpty(course.Skills))
+                            {
+                                <p><strong>Skills: </strong>@course.Skills</p>
+                            }
+
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            @foreach (var link in Model.PortfolioLinkList)
+            {
+                if (link.LinkType == "Github")
+                {
+                    <a href="@link.Link"><i class="fab fa-github"></i> GitHub</a>
+                }
+                else if (link.LinkType == "Linkedin")
+                {
+                    <a href="@link.Link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                }
+                else
+                {
+                    <a href="@link.Link"><i class="fa-solid fa-globe"></i> @link.Link</a>
+                }
+            }
+
+        </div>
+
+    </div>
+</div>
+
