@@ -185,6 +185,7 @@
     <Compile Include="Controllers\MyExperienceController.cs" />
     <Compile Include="Controllers\MyHobbyController.cs" />
     <Compile Include="Controllers\MyLanguageController.cs" />
+    <Compile Include="Controllers\MyProfileImageController.cs" />
     <Compile Include="Controllers\MySkillController.cs" />
     <Compile Include="Controllers\MyStrengthController.cs" />
     <Compile Include="Controllers\MyPortfolioLinkController.cs" />
@@ -437,6 +438,7 @@
     <Content Include="Views\MyPortfolioLink\SavePortfolioLink.cshtml" />
     <Content Include="Views\MyPortfolioLink\Index.cshtml" />
     <Content Include="Views\Portfolio\GetPortfolio.cshtml" />
+    <Content Include="Views\MyProfileImage\SaveProfileImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

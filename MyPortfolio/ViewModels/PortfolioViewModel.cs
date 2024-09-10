@@ -28,6 +28,8 @@ namespace MyPortfolio.ViewModels
 
         public List<PortfolioLink> PortfolioLinkList { get; set; }
 
+        public ProfileImage ProfileImage { get; set; }
+
 
         public void Init(ApplicationDbContext db, string id)
         {
@@ -53,6 +55,8 @@ namespace MyPortfolio.ViewModels
                     this.HobbyList = db.Hobby.Where(m => m.PortfolioUserId == this.PortfolioUser.PortfolioUserId).OrderBy(m => m.Name).ToList();
 
                     this.PortfolioLinkList = db.PortfolioLink.Where(m => m.PortfolioUserId == this.PortfolioUser.PortfolioUserId).OrderBy(m => m.LinkType).ToList();
+
+                    this.ProfileImage = db.ProfileImage.Where(m => m.PortfolioUserId == this.PortfolioUser.PortfolioUserId).FirstOrDefault();
                 }
             }
         }

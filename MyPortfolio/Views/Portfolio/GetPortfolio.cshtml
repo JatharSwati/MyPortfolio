@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Get Portfolio";
+    Layout = null; // This disables the Layout for this view.
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -112,8 +113,10 @@
 
         <!-- Profile Image -->
         <div class="col-md-4 d-flex justify-content-center align-items-center">
-            <img src="Swati_Jathar_Photo.PNG" alt="Profile Image" class="profile-img">
+            <img src="data:@Model.ProfileImage.ContentType;base64,@Model.ProfileImage.ImageBase64" alt="Profile Image" class="profile-img"   />
         </div>
+
+
 
         <!-- Name, Title, and Contact Information -->
         <div class="col-md-6">

@@ -26,6 +26,8 @@ namespace MyPortfolio.ViewModels
 
         public int PortfolioLinkCount { get; set; }
 
+        public Guid ProfileImageId { get; set; }
+
         public void Init(ApplicationDbContext db, Guid portfolioUserId)
         {
             this.BasicInfoId = db.BasicInfo.Where(m => m.PortfolioUserId == portfolioUserId).Select(m => m.BasicInfoId).FirstOrDefault();
@@ -45,6 +47,8 @@ namespace MyPortfolio.ViewModels
             this.HobbyCount = db.Hobby.Where(m => m.PortfolioUserId == portfolioUserId).Count();
 
             this.PortfolioLinkCount = db.PortfolioLink.Where(m => m.PortfolioUserId == portfolioUserId).Count();
+
+            this.ProfileImageId = db.ProfileImage.Where(m => m.PortfolioUserId == portfolioUserId).Select(m => m.ProfileImageId).FirstOrDefault();
         }
     }
 }

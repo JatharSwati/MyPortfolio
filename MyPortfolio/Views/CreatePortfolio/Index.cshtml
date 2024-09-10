@@ -237,6 +237,30 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="text-left">Profile Image</td>
+                <td>
+                    @if (Model.ProfileImageId == Guid.Empty)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.ProfileImageId == Guid.Empty)
+                    {
+                        @Html.ActionLink("Add", "SaveProfileImage", "MyProfileImage", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "SaveProfileImage", "MyProfileImage", new { profileImageId = Model.ProfileImageId }, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
         </tbody>
 
     </table>
